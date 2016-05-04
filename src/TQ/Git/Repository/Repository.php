@@ -100,7 +100,7 @@ class Repository extends AbstractRepository
                     '"%s" is not a valid path', $repositoryPath
                 ));
             } else {
-                if (!file_exists($repositoryPath) && !mkdir($repositoryPath, $createIfNotExists, true)) {
+                if (!file_exists($repositoryPath) && !@mkdir($repositoryPath, $createIfNotExists, true)) {
                     throw new \RuntimeException(sprintf(
                         '"%s" cannot be created', $repositoryPath
                     ));
